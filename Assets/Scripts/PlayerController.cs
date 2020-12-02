@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
         if (health > 0)
         {
+            //constrain rotate speed
             if (rotateSpeed <= rotateMin)
             {
                 rotateSpeed = rotateMin;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             {
                 rotateSpeed = rotateMax;
             }
+
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 shoot();
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 health++;
+                rotateSpeed += rotateIncrease;
             }
             if (Input.GetKeyDown(KeyCode.X))
             {
